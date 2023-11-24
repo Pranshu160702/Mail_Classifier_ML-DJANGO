@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam/Ham Classifier</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Spam/Ham Message Classifier</h1>
+    <h4>(Naive Bayes Classifier (MNB))</h4>
+    <form method="post" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <textarea cols="60" rows="10" placeholder="Please Enter Your Message Here..." name="msg"></textarea>
+        <button id="submitBtn" type="submit" class="button">Classify!</button>
+    </form>
+</body>
+</html>
